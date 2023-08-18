@@ -1,0 +1,8 @@
+<h2>Welcome dear <%= current_user.email %></h2>
+<h4>Events</h4>
+<%= @user_events.each do |event, index| %>
+  <div>
+    <div>Event Number: <%= index %></div>
+    <small>Event Date: <%= time_ago_in_words(event.date) %> later %></small>
+  </div>
+<% end %>

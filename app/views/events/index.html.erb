@@ -1,0 +1,5 @@
+<h2>Rails is not a way to earn money for me but its for the joy </h2>
+<% @events.each do |event| %>
+ <div style="margin: 10px 0;"> Event will held on <%= time_ago_in_words(event.date) %>  later</div>
+<% end %>
+<%= link_to "New Event", new_event_path %>
