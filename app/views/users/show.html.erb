@@ -1,8 +1,12 @@
 <h2>Welcome dear <%= current_user.email %></h2>
 <h4>Events</h4>
-<%= @user_events.each do |event, index| %>
+<% @user_events.each.with_index do |event, index| %>
   <div>
-    <div>Event Number: <%= index %></div>
+    <div>Event Number: <%= index + 1 %></div>
     <small>Event Date: <%= time_ago_in_words(event.date) %> later %></small>
+    <div>
+      <%= link_to "Edit the Event", edit_event_path(event) %>
+      <%= button_to "Delete This Event",  event, method: :delete%>
+    </div>
   </div>
 <% end %>

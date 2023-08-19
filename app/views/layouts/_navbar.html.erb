@@ -1,0 +1,12 @@
+<nav>
+  <div>
+    <% if user_signed_in? %>
+    <%= link_to "Events", events_path %>
+    <%= link_to "Created Events", created_events_path(current_user.id) %>
+      <%= link_to "Attended Events", attended_events_path(current_user.id) %>
+      <div><%= button_to "Logout", destroy_user_session_path, method: :delete %></div>
+    <% else %>
+    <%= link_to "Sign In", new_user_session_path %>
+    <% end %>
+      </div>
+</nav>
